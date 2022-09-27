@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>validation</title>
+  </head>
+  <link rel="stylesheet" href="style.css" />
+  <body>
+
+    <div class="form">
+      <form method="post" name="formValidasi" onsubmit="return validasi()">
+        <h2>Formulir Pendaftaran Webinar</h2>
+        <div class="item" >
+          Nama Lengkap :
+          <input type="text" name="nama" id="nama" />
+          <small style="color: red" id="alertNama"></small>
+        </div>
+
+        <div class="item">
+          Email Aktif :
+          <input type="text" name="email" id="email" />
+          <small style="color: red" id="alertEmail"></small>
+        </div>
+
+        <div class="item">
+          Institusi :
+          <input type="text" name="institusi" id="institusi" />
+          <small style="color: red" id="alertInstitusi"></small>
+        </div>
+
+        <div class="item">
+          Nomor HP :
+          <input type="text" name="nomor" id="nomor" />
+          <small style="color: red" id="alertNomor"></small>
+        </div>
+
+        <div class="item">
+          Jabatan :
+          <input type="text" id="jabatan" name="jabatan" />
+          <small style="color: red" id="alertJabatan"></small>
+        </div>
+
+        <div>
+          <button type="submit">Daftar</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      function validasi() {
+        // tangkap value input
+        var nama = document.getElementById("nama").value;
+        var email = document.getElementById("email").value;
+        var institusi = document.getElementById("institusi").value;
+        var nomor = document.getElementById("nomor").value;
+        var jabatan = document.getElementById("jabatan").value;
+
+        console.log(nama);
+        console.log(email);
+        console.log(institusi);
+        console.log(nomor);
+        console.log(jabatan);
+
+        // // jika value kosong pesan ditampilkan
+
+        if (nama == "") {
+          document.getElementById("alertNama").innerHTML = "*wajib diisi*";
+          // jika value tidak kosong
+        } else {
+          document.getElementById("alertNama").innerHTML = "";
+        }
+
+        if (email == "") {
+          document.getElementById("alertEmail").innerHTML = "*wajib diisi*";
+          // jika value tidak kosong
+        } else {
+          document.getElementById("alertEmail").innerHTML = "";
+        }
+
+        if (institusi == "") {
+          document.getElementById("alertInstitusi").innerHTML = "*wajib diisi*";
+          // jika value tidak kosong
+        } else {
+          document.getElementById("alertInstitusi").innerHTML = "";
+        }
+
+        if (nomor == "") {
+          document.getElementById("alertNomor").innerHTML = "*wajib diisi*";
+          // jika value tidak kosong
+        } else {
+          document.getElementById("alertNomor").innerHTML = "";
+        }
+
+        if (jabatan == "") {
+          document.getElementById("alertJabatan").innerHTML = "*wajib diisi*";
+          // jika value tidak kosong
+        } else {
+          document.getElementById("alertJabatan").innerHTML = "";
+        }
+
+        // jika ada var yang bervalue kosong maka return false
+        if (nama == "" || email == "" || institusi == "" || nomor == "" || jabatan == "") {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>
